@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'dev.flutter.flutter-gradle-plugin'
+}
+
+android {
+    namespace 'com.example.counterapp'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.example.counterapp'
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+    }
+
+    buildTypes {
+        release {
+            // For Flutter, minify/shrinker typically disabled to avoid issues
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // Signing config: For Play Store, create a keystore and configure below.
+            // 1) Generate keystore:
+            //    keytool -genkey -v -keystore ~/counterapp-release.keystore -alias counterapp -keyalg RSA -keysize 2048 -validity 10000
+            // 2) Create file at android/key.properties with:
+            //    storePassword=<password>
+            //    keyPassword=<password>
+            //    keyAlias=counterapp
+            //    storeFile=../counterapp-release.keystore
+            // 3) Uncomment signingConfig release below after creating signingConfigs.
+            // signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            shrinkResources false
+        }
+    }
+
+    // signingConfigs {
+    //     release {
+    //         def keystorePropertiesFile = rootProject.file('key.properties')
+    //         def keystoreProperties = new Properties()
+    //         if (keystorePropertiesFile.exists()) {
+    //             keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+    //             storeFile file(keystoreProperties['storeFile'])
+    //             storePassword keystoreProperties['storePassword']
+    //             keyAlias keystoreProperties['keyAlias']
+    //             keyPassword keystoreProperties['keyPassword']
+    //         }
+    //     }
+    // }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+}
