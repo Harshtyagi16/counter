@@ -1,0 +1,14 @@
+# Gradle files
+.gradle/
+build/
+*/build/
+local.properties
+
+# Keystore files
+key.properties
+*.jks
+*.keystore
+
+# Generated files
+captures/
+outputs/

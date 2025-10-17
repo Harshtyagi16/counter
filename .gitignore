@@ -1,0 +1,15 @@
+.DS_Store
+.melos_tool
+.pub-cache/
+.dart_tool/
+build/
+.dart_tool/
+.packages
+flutter_export_environment.sh
+.idea/
+.vscode/
+**/GeneratedPluginRegistrant.*
+**/key.properties
+**/*.keystore
+**/*.jks
+**/*.keystore

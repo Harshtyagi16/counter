@@ -1,0 +1,31 @@
+name: counterapp
+description: A simple Counter App using Material 3 with animations.
+# Flutter uses version in the format: x.y.z+buildNumber
+version: 1.0.0+1
+publish_to: 'none'
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Optional icons set for iOS-like icons; not required, but common
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_icons:
+  android: true
+  ios: false
+  image_path: assets/icon.png
+  adaptive_icon_background: "#3F51B5"
+  adaptive_icon_foreground: assets/icon.png
+
+flutter:
+  uses-material-design: true
